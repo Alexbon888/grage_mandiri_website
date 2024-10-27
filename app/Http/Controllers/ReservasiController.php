@@ -64,4 +64,15 @@ class ReservasiController extends Controller
         return redirect()->route('admin.index')
                         ->with('success', 'Reservasi Berhasil Dihapus.');
     }
+
+    public function search(Request $request)
+    {
+        $searchTerm = $request->input('search');
+
+        $reservasis = Reservasi::where('plat', 'LIKE', "%{$searchTerm}%")
+                    ->orWhere('status', 'LIKE', "%{$searchTerm}%")
+                    ->get();
+
+        return view('admin.index', ['reservasi' => $reservasis]);
+    }
 }

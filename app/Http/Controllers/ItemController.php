@@ -21,9 +21,10 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'kode' => 'required',
             'nama' => 'required',
             'harga' => 'required',
-            'keterangan' => 'required',
+
         ]);
 
         Item::create($request->all());
@@ -45,9 +46,10 @@ class ItemController extends Controller
     public function update(Request $request, Item $item)
     {
         $request->validate([
+            'kode' => 'required',
             'nama' => 'required',
             'harga' => 'required',
-            'keterangan' => 'required',
+
         ]);
 
         $item->update($request->all());
@@ -62,5 +64,16 @@ class ItemController extends Controller
 
         return redirect()->route('admin.index1')
                         ->with('success', 'Item berhasil dihapus.');
+    }
+
+    public function search(Request $request)
+    {
+        $searchTerm = $request->input('search');
+
+        $items = Item::where('nama', 'LIKE', "%{$searchTerm}%")
+                    ->orWhere('kode', 'LIKE', "%{$searchTerm}%")
+                    ->get();
+
+        return view('item.index', ['item' => $items]);
     }
 }

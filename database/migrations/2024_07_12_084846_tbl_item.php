@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('item', function (Blueprint $table) {
             $table->bigIncrements('id');
 
+            $table->string('kode');
             $table->string('nama');
             $table->string('harga');
-            $table->text('keterangan');
+
 
             $table->timestamps();
         });

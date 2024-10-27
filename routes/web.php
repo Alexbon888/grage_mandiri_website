@@ -45,3 +45,7 @@ Route::get('admin_item', [ItemController::class, 'index'])->name('admin.index1')
 // Controller
 Route::resource('reservasi', ReservasiController::class);
 Route::resource('item', ItemController::class);
+
+//search bar
+Route::get('item_search', [ItemController::class, 'search'])->name('item.search');
+Route::get('reservasi_search', [ReservasiController::class, 'search'])->name('reservasi.search');

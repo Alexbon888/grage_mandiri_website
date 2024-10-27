@@ -123,9 +123,6 @@
                             <div class="pull-left">
                                 <h2>Tambah Item</h2>
                             </div>
-                            <div class="pull-right">
-                                <a class="btn btn-primary" href="{{ route('item.index') }}">Kembali</a>
-                            </div>
                         </div>
                     </div>
 
@@ -146,6 +143,13 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
+                                    <strong>Kode:</strong>
+                                    <input type="text" name="kode" class="form-control" placeholder="Kode">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
                                     <strong>Nama:</strong>
                                     <input type="text" name="nama" class="form-control" placeholder="Nama">
                                 </div>
@@ -158,15 +162,10 @@
                                 </div>
                             </div>
 
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <strong>Keterangan:</strong>
-                                    <textarea class="form-control" style="height:150px" name="keterangan" placeholder="Keterangan"></textarea>
-                                </div>
-                            </div>
-
                             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                                 <button type="submit" class="btn btn-primary">Submit</button>
+                                <a> | </a>
+                                <a class="btn btn-primary" href="{{ route('admin.index1') }}">Kembali</a>
                             </div>
                         </div>
                     </form>

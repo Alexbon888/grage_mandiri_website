@@ -117,59 +117,59 @@
                 <!-- Topbar -->
 
                 <!-- Container Fluid -->
-                <div class="container-fluid" id="container-wrapper">
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Edit Item</h1>
-                    </div>
-
+                <div class="container">
                     <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card mb-4">
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Form Edit Item</h6>
-                                </div>
-
-                                <div class="card-body">
-                                    @if ($errors->any())
-                                        <div class="alert alert-danger">
-                                            <strong>Whoops!</strong> Ada beberapa masalah dengan input Anda.<br><br>
-                                            <ul>
-                                                @foreach ($errors->all() as $error)
-                                                    <li>{{ $error }}</li>
-                                                @endforeach
-                                            </ul>
-                                        </div>
-                                    @endif
-
-                                    <form action="{{ route('item.update', $item->id) }}" method="POST">
-                                        @csrf
-                                        @method('PUT')
-
-                                        <div class="form-group">
-                                            <label for="nama">Nama Item</label>
-                                            <input type="text" name="nama" class="form-control"
-                                                value="{{ $item->nama }}">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="harga">Harga Item</label>
-                                            <input type="text" name="harga" class="form-control"
-                                                value="{{ $item->harga }}">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="keterangan">Keterangan</label>
-                                            <textarea name="keterangan" class="form-control" rows="3">{{ $item->keterangan }}</textarea>
-                                        </div>
-
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                        <a href="{{ route('item.index') }}" class="btn btn-secondary">Kembali</a>
-                                    </form>
-                                </div>
+                        <div class="col-lg-12 margin-tb">
+                            <div class="pull-left">
+                                <h2>Edit Item</h2>
                             </div>
                         </div>
                     </div>
+
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <strong>Whoops!</strong> Ada kesalahan input.<br><br>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <form action="{{ route('item.update', $item->id) }}" method="POST">
+                        @csrf
+                        @method('PUT')
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Kode:</strong>
+                                    <input type="text" name="kode" value="{{ $item->kode }}" class="form-control" placeholder="Kode">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Nama:</strong>
+                                    <input type="text" name="nama" value="{{ $item->nama }}" class="form-control" placeholder="Nama">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Harga:</strong>
+                                    <input type="text" name="harga" value="{{ $item->harga }}" class="form-control" placeholder="Harga">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                                <a> | </a>
+                                <a class="btn btn-primary" href="{{ route('admin.index1') }}">Kembali</a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <!-- Container Fluid End-->
             </div>

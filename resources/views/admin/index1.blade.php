@@ -115,6 +115,20 @@
                                 <div class="card">
                                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                         <h6 class="m-0 font-weight-bold text-primary">Tabel Item</h6>
+
+                                        <!-- Search Form -->
+                                        <form action="{{ route('item.search') }}" method="GET" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                                            <div class="input-group">
+                                                <input type="text" name="search" class="form-control bg-light border-0 small" placeholder="Cari Kode / Nama Item..." aria-label="Search" aria-describedby="basic-addon2">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-primary" type="submit">
+                                                        <i class="fas fa-search fa-sm"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <!-- End Search Form -->
+
                                         <a href="{{ route('item.create') }}" class="btn btn-sm btn-primary">Tambah Item</a>
                                     </div>
 
@@ -123,26 +137,26 @@
                                             <thead class="thead-light">
                                                 <tr>
                                                     <th>No</th>
+                                                    <th>Kode Item</th>
                                                     <th>Nama Item</th>
                                                     <th>Harga Item</th>
-                                                    <th>Keterangan</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
 
                                             <tbody>
-                                                @foreach ($item as $item)
+                                                @foreach ($item as $i)
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
-                                                        <td>{{ $item->nama }}</td>
-                                                        <td>{{ $item->harga }}</td>
-                                                        <td>{{ $item->keterangan }}</td>
+                                                        <td>{{ $i->kode }}</td>
+                                                        <td>{{ $i->nama }}</td>
+                                                        <td>{{ $i->harga }}</td>
                                                         <td>
-                                                            <form action="{{ route('item.destroy', $item->id) }}" method="POST">
-                                                                <a class="btn btn-primary" href="{{ route('item.edit', $item->id) }}">Edit</a>
+                                                            <form action="{{ route('item.destroy', $i->id) }}" method="POST" style="display:inline-block;">
+                                                                <a href="{{ route('item.edit', $i->id) }}" class="btn btn-sm btn-primary">Edit Item</a>
                                                                 @csrf
                                                                 @method('DELETE')
-                                                                <button type="submit" class="btn btn-danger">Hapus</button>
+                                                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus item ini?')">Hapus</button>
                                                             </form>
                                                         </td>
                                                     </tr>
@@ -175,7 +189,7 @@
 
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                                        <a href="{{ url('home') }}" class="btn btn-primary">Logout</a>
+                                        <a href="{{ url('login') }}" class="btn btn-primary">Logout</a>
                                     </div>
                                 </div>
                             </div>
