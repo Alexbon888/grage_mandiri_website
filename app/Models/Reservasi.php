@@ -12,6 +12,7 @@ class Reservasi extends Model
     protected $table = 'reservasi';
 
     protected $fillable = [
+        'user_id',
         'nama',
         'no_hp',
         'alamat',
@@ -20,6 +21,11 @@ class Reservasi extends Model
         'plat',
         'keluhan',
         'status',
-        'item'
+        'item',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

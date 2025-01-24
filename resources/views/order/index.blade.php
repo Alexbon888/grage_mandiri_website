@@ -24,7 +24,11 @@
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="{{ url('order') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <h2 class="m-0 text-primary"><i class="fa fa-car me-3"></i>Grage Mandiri</h2>
-            <a href="/logout" class="nav-item nav-link">Log Out</a>
+            
+            <a href="#" class="nav-item nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out</a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
         </a>
 
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -34,7 +38,6 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="{{ url('history') }}" class="nav-item nav-link active">History</a>
-                <a href="{{ url('') }}" class="nav-item nav-link">Profile</a>
             </div>
 
             <a href="{{ url('order') }}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Order<i class="fa fa-arrow-right ms-3"></i></a>
@@ -51,10 +54,6 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center text-uppercase">
                         <li class="breadcrumb-item text-white active" aria-current="page">History</li>
-
-                        <li class="breadcrumb-item">
-                            <a href="{{ url('') }}">Profile</a>
-                        </li>
 
                         <li class="breadcrumb-item">
                             <a href="{{ url('order') }}">Order</a>

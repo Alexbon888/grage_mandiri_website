@@ -74,6 +74,6 @@ class ItemController extends Controller
                     ->orWhere('kode', 'LIKE', "%{$searchTerm}%")
                     ->get();
 
-        return view('item.index', ['item' => $items]);
+        return view('admin.index1', ['item' => $items]);
     }
 }

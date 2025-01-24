@@ -4,7 +4,7 @@
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-light mb-4">Alamat Lengkap</h4>
 
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jalan Tentara Pelajar</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jalan Tentara Pelajar No.69</p>
 
                 <p class="mb-2">
                     <iframe class="position-relative rounded w-100 h-100"
@@ -13,16 +13,36 @@
                     tabindex="0"></iframe>
                 </p>
 
-                <i class="fa fa-phone-alt me-3"></i><a style="color: white" href="https://wa.me/62881023014902">0881023014902</a> </br>
-                <i class="fa fa-phone-alt me-3"></i><a style="color: white" href="https://wa.me/6282214768651">082214768651</a>
+                <i class="fa fa-phone-alt me-3">WhatsApp:</i><a style="color: white" href="https://wa.me/62881023014902">0881023014902</a> </br>
+                <i class="fa fa-phone-alt me-3">WhatsApp:</i><a style="color: white" href="https://wa.me/6282214768651">082214768651</a>
             </div>
 
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-light mb-4">Jam Operasional</h4>
 
-                <h6 class="text-light">Senin - Sabtu :</h6>
-
+                <h6 class="text-light">Senin:</h6>
                 <p class="mb-4">08:00 - 17:00</p>
+
+                <h6 class="text-light">Selasa:</h6>
+                <p class="mb-4">08:00 - 17:00</p>
+
+                <h6 class="text-light">Rabu:</h6>
+                <p class="mb-4">08:00 - 17:00</p>
+                
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-light mb-4">Hari Kerja</h4>
+
+                <h6 class="text-light">Kamis:</h6>
+                <p class="mb-4">08:00 - 17:00</p>
+
+                <h6 class="text-light">Jumat:</h6>
+                <p class="mb-4">08:00 - 17:00</p>
+
+                <h6 class="text-light">Sabtu:</h6>
+                <p class="mb-4">08:00 - 17:00</p>
+                
             </div>
         </div>
     </div>
